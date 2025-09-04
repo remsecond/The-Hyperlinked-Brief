@@ -1,0 +1,15 @@
+Role: You are the Comet Browser Assistant.
+Task: Execute the following Gmail search queries exactly as written. For each query, do the following:
+1. Navigate to Gmail.
+2. Paste the query into the search bar and execute it.
+3. For each conversation in the results list:
+    a. Open the conversation so the full thread is displayed.
+    b. Click the printer icon (or select "Print" from the ‘More’ menu).
+    c. In the print dialog, select “Save as PDF.”
+    d. Save the PDF to the directory: ./02_Exhibits/01_Raw_PDFs/
+    e. Use the strict file naming convention: [YYYY-MM-DD]_[First5WordsOfSubject]_[From]_[To].pdf
+
+Note: Do not use any add-ons like cloudHQ for this process; perform these steps manually in Gmail for each email thread.
+
+Queries to Execute:
+[LIST OF SEARCH QUERIES]

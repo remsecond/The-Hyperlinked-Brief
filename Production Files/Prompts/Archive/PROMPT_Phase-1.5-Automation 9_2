@@ -1,0 +1,25 @@
+**Role:** You are an Automation Engineer specializing in legal discovery workflows.
+**Task:** Generate a complete, robust, and reusable Python script that automates the query generation process.
+
+**Instructions:**
+Using the provided table of Gmail queries as the logical blueprint, write a script named `generate_gmail_queries.py` that must:
+
+1.  **Take Command-Line Arguments:**
+    *   `--input`: Path to the input `Seed_Worksheet.csv` file.
+    *   `--output`: Path where the output `Queries_Output.csv` will be written.
+    *   `--mode`: Output style, either `table` for human review or `raw` for automation hand-off.
+
+2.  **Programmatically Build Queries:** Parse the CSV and for each seed (row), build three query tiers:
+    *   **Precise:** Use ALL email addresses from `Primary_Characters` and ALL terms from `Keywords_Include`.
+    *   **Intermediate:** Use the first 1-2 most central email addresses and ALL keywords.
+    *   **Broad:** Use ONLY the keywords (no email filters).
+    *   Apply standard exclusions (`-newsletter -calendar -promotion -invoice`).
+    *   Use `after:/before:` for dates from `Date_Range_Start` and `Date_Range_End`.
+
+3.  **Output a CSV:** The output file must have the columns: `Seed_ID, Precise Query, Intermediate Query, Broad Query`.
+
+4.  **Print Results:** Based on `--mode`:
+    *   `table`: Print a formatted table for human review.
+    *   `raw`: Print a simple numbered list of all queries for direct hand-off to the Phase 2 browser automation agent.
+
+**Output:** Provide the complete, final Python code with no explanations.

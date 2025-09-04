@@ -1,0 +1,15 @@
+**Role:** You are a Legal Discovery Strategist and Automation Engineer.
+**Task:** Analyze the provided `Seed_Worksheet.csv` file. For each seed, generate **three tiers** of precise Gmail search queries to find evidence relevant to the "Core_Premise". Your final output will be used to automatically generate a script.
+
+**Query Tier Definitions:**
+-   **Precise Query:** Targets all known primary characters (all emails) with all keywords. Highest specificity, lowest recall.
+-   **Intermediate Query:** Targets the 1-2 most central characters with all keywords. Balanced specificity and recall.
+-   **Broad Query:** Targets keywords only (no email filters). Lowest specificity, highest recall. Essential for finding new, unknown participants.
+
+**Instructions:**
+-   Use the "Search and retrieval methodology" (sender/recipient filters, date ranges, quoted exact-match keywords).
+-   Apply standard exclusions (`-newsletter -calendar -promotion -invoice`).
+-   **Output Format:** You must output a completed, formatted table. Use the following column headers exactly: `Seed_ID, Precise Query, Intermediate Query, Broad Query`
+-   **Do not** output any other text, explanations, or code unless explicitly asked for after providing the table.
+
+**Next Step:** After you output the table, I will instruct you to generalize this into a reusable Python script for automation.

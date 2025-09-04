@@ -1,0 +1,57 @@
+# 📑 EvidenceAI Harmonized Prompt Master Index
+
+This index provides the complete step-by-step flow for operators using the harmonized EvidenceAI prompts. Each phase is linked to its dedicated prompt file and includes the expected input and output.
+
+---
+
+## 🔹 Phase 1: Strategist
+**File:** `prompt_phase_1_harmonized`  
+**Input:** A natural language Hypothesis (plain English).  
+**Output:** A table with three Gmail search queries (Precise, Intermediate, Broad).  
+**Next Step:** If queries are valid, copy them into **Phase 2: Acquisition**. If not, refine Hypothesis and rerun Phase 1.
+
+---
+
+## 🔹 Phase 1.5: Automation
+**File:** `prompt_phase_1.5_automation_harmonized`  
+**Input:** A natural language Hypothesis.  
+**Output:** A working Python script (`generate_gmail_queries.py`) that can generate queries in table or raw format.  
+**Next Step:** If the script produces valid queries, pass them to **Phase 2: Acquisition**. If not, refine Hypothesis and rerun Phase 1.5 (or return to Phase 1 Strategist).
+
+---
+
+## 🔹 Phase 2: Acquisition
+**File:** `prompt_phase_2_acquisition_harmonized`  
+**Input:** Query Plan (from Phase 1 or 1.5).  
+**Output:** A folder of PDFs (`./02_Exhibits/01_Raw_PDFs/`) with strict naming convention + acquisition log.  
+**Next Step:** If exhibits are correctly preserved, proceed to **Phase 3: Discovery Analyst**. If not, rerun Phase 2 or return to Phase 1 with a refined Hypothesis.
+
+---
+
+## 🔹 Phase 3: Discovery Analyst
+**File:** `prompt_phase_3_discovery_analyst_harmonized`  
+**Input:** Preserved PDF exhibits (from Phase 2).  
+**Output:** A narrative report including Findings, Contradictions, Evidence Gaps, Recommended Next Hypothesis, and Query Design Hints.  
+**Next Step:** Apply the **Decision Gate**. If Next Hypothesis is approved, return to **Phase 1: Strategist**. If no new leads, either broaden scope (Phase 1) or move to **Phase 4: Synthesis** if record is mature.
+
+---
+
+## 🔹 Phase 4: Synthesis
+**File:** `prompt_phase_4_synthesis_harmonized`  
+**Input:** Final exhibits (from Phase 2) and any Findings approved via Decision Gate.  
+**Output:** Draft text for **Legal_Memorandum.docx** and **Consolidated_Summary_of_Facts.docx**, with citation placeholders + Evidence Appendix (and Redaction Log if used).  
+**Next Step:** Convert placeholders into hyperlinks to local PDFs. If gaps remain, return to **Phase 3: Discovery Analyst**. If complete, finalize and archive in **/Production Files/**.
+
+---
+
+## 🔹 Workflow Summary
+1. Phase 1: Strategist → Generate Query Plan.  
+2. Phase 1.5: Automation → Generate Python script (optional).  
+3. Phase 2: Acquisition → Capture exhibits as PDFs.  
+4. Phase 3: Discovery Analyst → Analyze, recommend Next Hypothesis.  
+5. Phase 4: Synthesis → Draft final legal deliverables.  
+6. Loop back via **Decision Gate** until discovery record is mature.
+
+---
+
+✅ This index ensures operators always know what file to run, what input/output to expect, and how to move forward in the workflow.

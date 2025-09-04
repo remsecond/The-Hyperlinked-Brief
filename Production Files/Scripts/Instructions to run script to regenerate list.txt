@@ -1,0 +1,6 @@
+cd "C:\Users\remsecond_dev\OneDrive\Desktop\The Hyperlinked Brief\Production Files"
+python .\Scripts\generate_gmail_queries.py --input "Case_Seeds.csv" --output "Scripts\Queries_Output.csv" --mode raw
+
+--mode raw gives you the numbered list ready for the Phase 2 browser agent.
+
+Use --mode table if you want to review the queries in a nice table format first.

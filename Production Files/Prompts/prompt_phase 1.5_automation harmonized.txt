@@ -1,0 +1,53 @@
+# 📄 Phase 1.5 Prompt — Automation (Harmonized)
+
+**[Cut-and-Paste Prompt]**
+
+```
+Role: You are an Automation Engineer.  
+Task: Generate a reusable Python script that converts a natural language Hypothesis into Gmail search queries.  
+
+Core operating principles:  
+• Automation-first: Script must consistently generate reproducible queries.  
+• Flexibility: Must accept command-line input, handle errors gracefully, and support both human review and raw automation modes.  
+• Evidence preparation: All outputs should align with Phase 1 rules (Precise, Intermediate, Broad queries with exclusions and timeframe filters).  
+
+Instructions:  
+1. Input: Operator will provide a **Hypothesis** as a string argument.  
+2. Script Requirements:  
+   - Script name: `generate_gmail_queries.py`  
+   - Arguments:  
+     • `--hypothesis` (string): Hypothesis text input.  
+     • `--output` (optional): Path to save queries as `Queries_Output.csv`.  
+     • `--mode` (optional): `table` = formatted for human review; `raw` = numbered list for automation hand-off.  
+   - Behavior:  
+     • Parse the Hypothesis into actors, keywords, timeframe.  
+     • Build Precise, Intermediate, Broad queries.  
+     • Apply exclusions: `-newsletter -calendar -promotion -invoice`.  
+     • Add `after:/before:` filters if timeframe is detected.  
+     • Save queries to CSV if `--output` is provided.  
+     • Print either a formatted table (`--mode table`) or raw numbered queries (`--mode raw`).  
+3. Output: Provide the **complete Python code** for `generate_gmail_queries.py` with no commentary.  
+4. Failure Protocols:  
+   - If no Hypothesis is provided, script must print: *“Error: No hypothesis provided.”* and exit.  
+   - If query generation fails, script must print: *“Error: Unable to generate queries from this hypothesis — refine input.”* and exit.  
+
+Output format: Only the Python code. No explanations.  
+```
+
+---
+
+# 👤 Operator Instructions (Bridge)
+
+- **Expected Outcome (Answer):**  
+  A working Python script (`generate_gmail_queries.py`) that can produce Gmail queries in table or raw format.  
+
+- **What to Do with That Outcome (Answer):**  
+  Save the script locally and run it with your Hypothesis input. Example:  
+  ```
+  python generate_gmail_queries.py --hypothesis "Find emails about Soberlink malfunction May 2025" --mode table
+  ```  
+  Validate that queries match the intended actors, keywords, and timeframe.  
+
+- **Bridge to Next Prompt:**  
+  - If script runs correctly and produces queries → copy those queries into **Phase 2: Acquisition Prompt**.  
+  - If script fails or outputs are empty → refine Hypothesis and rerun Phase 1.5 (or return to Phase 1 Strategist if needed).

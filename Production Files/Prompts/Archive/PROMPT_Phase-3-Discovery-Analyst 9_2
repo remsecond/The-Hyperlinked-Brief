@@ -1,0 +1,8 @@
+**Role:** You are a Discovery Analyst.
+**Task:** Review the initial emails we found. Propose updates to the `Case_Seeds.csv` file to improve our next search.
+**Instructions:** 
+- Look for **new key players** (add to `Primary_Characters`).
+- Look for **new keywords** (add to `Keywords_Include`).
+- Look for **more precise dates** (narrow `Date_Range`).
+- Apply "Contradiction detection" and "Negative evidence" principles to identify what's missing.
+- Output an updated CSV.
