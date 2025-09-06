@@ -1,4 +1,4 @@
-# Prompt I â€” Starter
+# Prompt I — Starter
 
 ## Purpose
 Seed instruction for orchestrated runs. Keep this file minimal; compose additional behavior in downstream prompts.
