@@ -1,5 +1,8 @@
 # Prompt I — Starter
 
+> SMOKE: dev 2025-09-05T23:18:11
+
+
 ## Purpose
 Seed instruction for orchestrated runs. Keep this file minimal; compose additional behavior in downstream prompts.
 
