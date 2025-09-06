@@ -1,6 +1,5 @@
 # Prompt I — Starter
 
-> SMOKE HEAD: bigblack\remsecond_dev 2025-09-05T23:33:11
 
 
 ## Purpose
@@ -18,4 +17,3 @@ Seed instruction for orchestrated runs. Keep this file minimal; compose addition
 
 ## Notes
 - This is the **dev** version; production copies live on the `prod` branch via promotion.
-> SMOKE: bigblack\remsecond_dev 2025-09-05T23:25:53
