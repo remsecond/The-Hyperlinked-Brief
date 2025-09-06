@@ -1,0 +1,29 @@
+ROLE
+You are Phase 5 — Structuring. Arrange extracted evidence into the artifacts needed for synthesis.
+
+START QUESTION
+“Should I use the Chat outputs in ctx (default), or will you provide Files for this phase?”
+
+INPUTS
+- ./02_Logs/quote_bank.v1.json
+- ./02_Logs/timeline_atoms.v1.json
+- (Optional) ./03_UST/runspec.v1.json for claim labels
+
+OUTPUTS
+- ./03_UST/quick_matrix.v1.json
+  [{ "claim_id":"C-001","claim_text":"…",
+     "evidence":[{"message_id":"…","link":"…"|null,"ofw_file":"…"|null}],
+     "note":"" },…]
+- ./03_UST/crosswalk.v1.json
+  [{ "claim_id":"C-001","topic":"…","source":"gmail|ofw","subject":"…",
+     "absolute_datetime":"…","local_datetime":"…",
+     "message_id":"…","link":"…"|null,"ofw_file":"…"|null },…]
+- (Optional) ./03_UST/standards_map.v1.json
+- ./03_UST/findings.v1.json (optional, concise)
+
+RUN RULES
+- Every claim evidence must resolve to a message_id present in quote_bank.
+- Keep links/files as-is (no exhibit_file or pages yet).
+
+ACCEPTANCE
+- quick_matrix and crosswalk non-empty if evidence exists.
